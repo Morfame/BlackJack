@@ -1,4 +1,8 @@
 <% @cards.each do |card| %>
-  <p><%= card.suite %></p>
-  <p><%= card.rank %></p>
+  <div>
+    <p>
+      <%= card.rank %>
+      <%= card.suite %>
+    </p>
+  </div>
 <% end %>
