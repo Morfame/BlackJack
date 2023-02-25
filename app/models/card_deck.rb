@@ -55,7 +55,7 @@ class CardDeck
           cards << Card.new(suite, rank)
         end
       end
-      2.times { cards << Card.new("*", "Joker") }
+      # 2.times { cards << Card.new("*", "Joker") }
     end
   end
 end

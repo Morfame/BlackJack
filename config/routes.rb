@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :cards
   resources :card_decks
   resources :blacks
+  resources :card_jacks
 end

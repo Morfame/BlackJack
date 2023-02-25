@@ -1,8 +1,14 @@
+Random Number between 1 and 52 ----> <% vrnd = rand(1..52) %>
+<%=vrnd%>
+
 <% @cards.each do |card| %>
-  <div>
-    <p>
-      <%= card.rank %>
-      <%= card.suite %>
-    </p>
-  </div>
+  <p>
+    <%= card.rank %>
+    <%= card.suite %>
+  </p>
+  <%break%>
 <% end %>
+
+<%= link_to "Test", card_jacks_path %>
+<%= link_to "Lobby", root_path %>
+
