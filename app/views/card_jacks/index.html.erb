@@ -2,7 +2,11 @@ Random Number between 1 and 52 ----> <% vrnd = rand(1..52) %>
 <%=vrnd%>
 <h1>This is Card Jack Test</h1>
 
+<%sparky = CardJack.new('Sparky', '12 inches', '10 lbs')%>
+<p><%=sparky.info%></p>
 
+<%sparky.change_info('Spartacus', '24 inches', '45 lbs')%>
+<%=sparky.info%>
 
 <%= link_to "Lobby", root_path %>
 

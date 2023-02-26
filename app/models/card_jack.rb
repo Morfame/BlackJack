@@ -1,6 +1,23 @@
-# def build_cards
-#   do
-#     %w(♠︎ ♣︎ ♥︎ ♦︎)
-#     %w(A 2 3 4 5 6 7 8 9 10 J Q K)
-#   end
-# end
+class CardJack
+  attr_accessor :name, :height, :weight
+
+  def initialize(n, h, w)
+    @name = n
+    @height = h
+    @weight = w
+  end
+
+  def speak
+    "#{name} says arf!"
+  end
+
+  def change_info(n, h, w)
+    @name = n
+    @height = h
+    @weight = w
+  end
+
+  def info
+    "#{name} weighs #{weight} and is #{height} tall."
+  end
+end
