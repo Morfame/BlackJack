@@ -1,14 +1,23 @@
-Random Number between 1 and 52 ----> <% vrnd = rand(1..52) %>
-<%=vrnd%>
+  <%vnewcard = @vdeck.draw!%>
+  <%=vnewcard.rank%><%=vnewcard.suite%>
+  <%vnewcard1 = @vdeck.draw!%>
+  <%=vnewcard1.rank%><%=vnewcard1.suite%>
 
-<% @cards.each do |card| %>
-  <p>
-    <%= card.rank %>
-    <%= card.suite %>
-  </p>
-  <%break%>
-<% end %>
+  <%= form_with do |form| %>
 
-<%= link_to "Test", card_jacks_path %>
-<%= link_to "Lobby", root_path %>
+    <%= label_tag 'answer' do %>
+      Give it to me: <%= text_field_tag 'answer', @prev_answer %>
+    <% end %>
+
+    <%= form.label :YN %>
+    <%= form.text_field :title%>
+    <%= form.label :Honey or Parsnip%>
+    <%= form.text_area :content%>
+    <%= form.submit %>
+  <%end%>
+
+<p><%= link_to "Test", card_jacks_path %>
+<%= link_to "Lobby", root_path %></p>
+
+
 

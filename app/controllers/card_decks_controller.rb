@@ -1,5 +1,6 @@
 class CardDecksController < ApplicationController
   def index
-    @cards = CardDeck.new
+    @vdeck = CardDeck.new
+    @vdeck = @vdeck.shuffle!
   end
 end
