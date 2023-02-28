@@ -28,7 +28,7 @@
 <p><%=player.cards[1].rank%><%=player.cards[1].suit%></p>
 <p><%= "Player has #{vLenP} " %><%= "card".pluralize(vLenP)%><%= " and funds of £100"%></p>
 
-<strong><%= link_to "Place Bet", root_path %></strong>
+<strong><%= link_to "Place Bet", card_deck_path(id: 1) %></strong>
 <strong><%= link_to "Stick", root_path %></strong>
 <strong><%= link_to "Twist", root_path %></strong>
 <strong><%= link_to "End Game", root_path %></strong>

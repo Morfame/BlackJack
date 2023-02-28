@@ -6,6 +6,9 @@ class CardDecksController < ApplicationController
     vdeck = CardDeck.new
     @vdeck = vdeck.shuffle!
   end
+
+  def show
+  end
     
 end
 
