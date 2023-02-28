@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  root "cards#index"
-  resources :cards
+  root "card_decks#index"
   resources :card_decks
-  resources :blacks
-  resources :card_jacks
 end

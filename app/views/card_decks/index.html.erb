@@ -1,9 +1,3 @@
-<% dealer = User.new %>
-<% dealer.add(Book.new("moo", "foo")) %>
-<% dealer.add(Book.new("qoo", "doo")) %>
+<h1>Welcome to Morfame Casino</h1>
 
-<!-- vLen is used to pluralize card(s) -->
-<% vLen = dealer.books.length %>
-
-<%= "Dealer has #{vLen} " %><%= "card".pluralize(vLen)%>
-<p> <%= link_to "Home Page", root_path %> </p>
+<strong><p> <%= link_to "Play BlackJack", new_card_deck_path %> </p></strong>

@@ -1,1 +1,35 @@
-<h1>Card Deck New Page</h2>
+<h1>Morfame Casino - BlackJack</h1>
+
+<% dealer = User.new %>
+<% player = User.new %>
+
+<!-- Deals hand to Dealer -->
+<% vTmp = @vdeck.draw! %>
+<% dealer.add(Card.new(vTmp.suit, vTmp.rank)) %>
+<% vTmp = @vdeck.draw! %>
+<% dealer.add(Card.new(vTmp.suit, vTmp.rank)) %>
+
+<!-- Deals hand to Player -->
+<% vTmp = @vdeck.draw! %>
+<% player.add(Card.new(vTmp.suit, vTmp.rank)) %>
+<% vTmp = @vdeck.draw! %>
+<% player.add(Card.new(vTmp.suit, vTmp.rank)) %>
+
+<!-- vLen(D/P) (D)ealer (P)layer is used to pluralize card(s) -->
+<!-- Does not show Dealer cards YET -->
+
+<% vLenD = dealer.cards.length %>
+<p>**</p>
+<p>**</p>
+<p><%= "Dealer has #{vLenD} " %><%= "card".pluralize(vLenD)%><%= " and funds of £100"%></p>
+
+<% vLenP = player.cards.length %>
+<p><%=player.cards[0].rank%><%=player.cards[0].suit%></p>
+<p><%=player.cards[1].rank%><%=player.cards[1].suit%></p>
+<p><%= "Player has #{vLenP} " %><%= "card".pluralize(vLenP)%><%= " and funds of £100"%></p>
+
+<strong><%= link_to "Place Bet", root_path %></strong>
+<strong><%= link_to "Stick", root_path %></strong>
+<strong><%= link_to "Twist", root_path %></strong>
+<strong><%= link_to "End Game", root_path %></strong>
+

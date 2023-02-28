@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 class CardDeck
   def initialize(cards = build_cards)
     @cards = cards
@@ -50,9 +49,9 @@ class CardDeck
 
   def build_cards
     [].tap do |cards|
-      %w(♠︎ ♣︎ ♥︎ ♦︎).each do |suite|
+      %w(♠︎ ♣︎ ♥︎ ♦︎).each do |suit|
         %w(A 2 3 4 5 6 7 8 9 10 J Q K).each do |rank|
-          cards << Card.new(suite, rank)
+          cards << Card.new(suit, rank)
         end
       end
       #2.times { cards << Card.new("*", "Joker") }
@@ -61,34 +60,37 @@ class CardDeck
 end
 
 class Card
-  attr_reader :suite, :rank
+  attr_reader :suit, :rank
 
-  def initialize(suite, rank)
-    @suite = suite
+  def initialize(suit, rank)
+    @suit = suit
     @rank = rank
   end
 
   def ==(other)
-    suite == other.suite && rank == other.rank
+    suit == other.suit && rank == other.rank
   end
 end
-class Book
-  attr_accessor :title, :author
 
-  def initialize(t, a)
-    @title, @author = t, a
+
+
+class Card
+  attr_accessor :rank, :suit
+
+  def initialize(r, s)
+    @rank, @suit = r, s
   end
 end
 
 class User
-  attr_accessor :books
+  attr_accessor :cards, :suit
 
   def initialize
-    @books =  Array.new
+    @cards =  Array.new
   end
 
   def add(b)
-    @books << b
+    @cards << b
   end
 end
 
