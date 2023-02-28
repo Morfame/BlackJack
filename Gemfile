@@ -9,9 +9,8 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use minitest for testing ad-hoc functions
-gem "minitest"
-gem "test-unit-runner-tap"
+# Simple forms - replacing form_with
+gem "simple_form"
 
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"

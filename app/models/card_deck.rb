@@ -72,3 +72,23 @@ class Card
     suite == other.suite && rank == other.rank
   end
 end
+class Book
+  attr_accessor :title, :author
+
+  def initialize(t, a)
+    @title, @author = t, a
+  end
+end
+
+class User
+  attr_accessor :books
+
+  def initialize
+    @books =  Array.new
+  end
+
+  def add(b)
+    @books << b
+  end
+end
+

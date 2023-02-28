@@ -1,23 +1,9 @@
-  <%vnewcard = @vdeck.draw!%>
-  <%=vnewcard.rank%><%=vnewcard.suite%>
-  <%vnewcard1 = @vdeck.draw!%>
-  <%=vnewcard1.rank%><%=vnewcard1.suite%>
+<% dealer = User.new %>
+<% dealer.add(Book.new("moo", "foo")) %>
+<% dealer.add(Book.new("qoo", "doo")) %>
 
-  <%= form_with do |form| %>
+<!-- vLen is used to pluralize card(s) -->
+<% vLen = dealer.books.length %>
 
-    <%= label_tag 'answer' do %>
-      Give it to me: <%= text_field_tag 'answer', @prev_answer %>
-    <% end %>
-
-    <%= form.label :YN %>
-    <%= form.text_field :title%>
-    <%= form.label :Honey or Parsnip%>
-    <%= form.text_area :content%>
-    <%= form.submit %>
-  <%end%>
-
-<p><%= link_to "Test", card_jacks_path %>
-<%= link_to "Lobby", root_path %></p>
-
-
-
+<%= "Dealer has #{vLen} " %><%= "card".pluralize(vLen)%>
+<p> <%= link_to "Home Page", root_path %> </p>
